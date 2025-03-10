@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+
+{% load static %}
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Advanced Excel</title>
+
+    <link rel="icon" href="{% static 'images/presentation.png' %}" type="image/png" />
+    <link rel="stylesheet" href="{% static 'css/styleforcoursedetail.css' %}" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Dosis:wght@200..800&family=Geist+Mono:wght@100..900&family=Sevillana&family=Sour+Gummy:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet" />
+    <link rel="stylesheet"
+    href="https://cdn.jsdelivr.net/npm/boxicons@latest/css/boxicons.min.css">
+    <!-- or -->
+    <link rel="stylesheet"
+    href="https://unpkg.com/boxicons@latest/css/boxicons.min.css">
+  </head>
+  <body>
+    <!-- Navigation -->
+    <div class="nav">
+      <div class="logoname">
+        <img src="{% static 'images/presentation.png' %}" alt="Logo" />
+        Decent Institute
+      </div>
+      <div class="nav-link">
+        <ul>
+          <li><a href="{% url 'index' %}"><i class="bx bx-home"></i> Home</a></li>
+            <li><a href="{% url "courses" %}"><i class='bx bxs-layer-plus'></i> Courses</a></li>
+            <li><a href="{% url 'reviews' %}"><i class='bx bx-chat'></i> Reviews</a></li>
+            <li><a href="{% url "contact" %}"><i class='bx bx-phone-call'></i> Contact</a></li>
+            <li><a href="{% url 'about' %}"><i class='bx bx-info-circle' ></i> About</a></li>
+            
+        </ul>
+        <div class="call">
+          <h5>Call Now :</h5>
+          <a href="tel:919825754652"> 919825754652</a>
+        </div>
+      </div>
+
+      <div class="hamburger" onclick="toggleMenu()">☰</div>
+        
+       
+    </div> 
+    <script>
+      function toggleMenu() {
+          const navLink = document.querySelector('.nav-link');
+          navLink.classList.toggle('show');
+      }
+      let lastScrollTop = 0 // Variable to store the last scroll position
+      const navbar = document.querySelector('.nav')
+      const hamburger = document.querySelector('.hamburger')
+      const links = document.querySelector('.links')
+      
+      // Function to handle scrolling behavior
+      window.addEventListener('scroll', function () {
+          let currentScroll = window.pageYOffset || document.documentElement.scrollTop
+      
+          if (currentScroll > lastScrollTop) {
+          // Scroll down
+          navbar.style.transform = 'translateY(-100%)' // Hide navbar when scrolling down
+          } else {
+          // Scroll up
+          navbar.style.transform = 'translateY(0)' // Show navbar when scrolling up
+          }
+      
+          lastScrollTop = currentScroll <= 0 ? 0 : currentScroll // Prevent negative values
+      })
+      
+      document.addEventListener("DOMContentLoaded", function () {
+          // Get the current page URL
+          const currentPage = window.location.pathname;
+      
+          // Select all navigation links
+          const navLinks = document.querySelectorAll(".nav-link ul li a");
+      
+          navLinks.forEach(link => {
+              if (link.getAttribute("href") === currentPage) {
+                  link.classList.add("active"); // Add 'active' class to the matching link
+              }
+          });
+      });
+      
+
+      // ***********************************************
+      // Disable Right Click
+document.addEventListener('contextmenu', function (event) {
+  event.preventDefault();
+});
+
+// Disable Keyboard Shortcuts for Inspect Element
+document.addEventListener('keydown', function (event) {
+  // Block common developer tool shortcuts
+  if (
+      (event.ctrlKey && (event.key.toLowerCase() === 'u' || event.key.toLowerCase() === 's' || event.key.toLowerCase() === 'p')) ||  // Ctrl + U / S / P
+      (event.ctrlKey && event.shiftKey && (event.key.toLowerCase() === 'i' || event.key.toLowerCase() === 'j' || event.key.toLowerCase() === 'c')) ||  // Ctrl + Shift + I / J / C
+      event.key === 'F12' // F12 key
+  ) {
+      event.preventDefault();
+      return false;
+  }
+});
+</script>
+    <div class="course-detail">
+      <div class="course-header">
+          <h1 class="course-title">Advanced Excel</h1>
+          <div class="course-banner-container">
+              <img src="{% static 'images/advance-excel.jpg' %}" alt="Advanced Excel" class="course-banner" />
+          </div>
+      </div>
+  
+      <!-- Course Overview -->
+      <section class="course-overview">
+          <h2>What You'll Learn</h2>
+          <p>Master Microsoft Excel from beginner to advanced level. This course covers everything from the basics of Excel to advanced tools like Macros, VBA, PivotTables, and more. By the end of this course, you'll be able to handle large datasets, automate tasks, and create dynamic reports with ease.</p>
+  
+          <div class="learning-objectives">
+              <ul>
+                  <li>Master Microsoft Excel from Beginner to Advanced</li>
+                  <li>Build a solid understanding of the basics of Excel</li>
+                  <li>Learn the most common Excel functions used in the Office</li>
+                  <li>Automate your tasks with Macros and VBA</li>
+                  <li>Maintain large sets of Excel data in lists or tables</li>
+                  <li>Create dynamic reports using PivotTables</li>
+                  <li>Unlock dynamic formulas such as IF, VLOOKUP, INDEX, MATCH</li>
+                  <li>Master Excel Add-In PowerPivot</li>
+                  <li>Audit Excel worksheet formulas for cleanliness and efficiency</li>
+                  <li>Efficiently manage and analyze data in Excel</li>
+              </ul>
+          </div>
+      </section>
+  
+      <!-- Course Content Section -->
+      <section class="course-content">
+          <h2>Course Modules</h2>
+          <div class="modules">
+              <div class="module">
+                  <h3>Module 1: Getting Started with Excel</h3>
+                  <p>Learn the basics of Excel, including how to create and manage spreadsheets, and format cells for effective data entry.</p>
+              </div>
+              <div class="module">
+                  <h3>Module 2: Essential Excel Functions</h3>
+                  <p>Master essential functions like SUM, AVERAGE, VLOOKUP, IF, and INDEX/MATCH that are commonly used in office tasks.</p>
+              </div>
+              <div class="module">
+                  <h3>Module 3: Working with Large Data Sets</h3>
+                  <p>Learn how to manage large sets of data effectively, organize them in lists or tables, and sort/filter for better analysis.</p>
+              </div>
+              <div class="module">
+                  <h3>Module 4: PivotTables & Dynamic Reporting</h3>
+                  <p>Create and manipulate dynamic reports using PivotTables and PivotCharts for effective data analysis and presentation.</p>
+              </div>
+              <div class="module">
+                  <h3>Module 5: Automating Tasks with Macros and VBA</h3>
+                  <p>Unlock the power of Excel's automation features by mastering Macros and Visual Basic for Applications (VBA).</p>
+              </div>
+              <div class="module">
+                  <h3>Module 6: Advanced Excel Features (PowerPivot & Formula Auditing)</h3>
+                  <p>Explore Excel’s Add-In, PowerPivot, and learn how to audit and clean Excel formulas for accuracy and efficiency.</p>
+              </div>
+          </div>
+      </section>
+  
+    
+  </div>
+  
+  
+    <!-- Footer -->
+    <footer class="footer">
+      <div class="container">
+        <div class="footer-about">
+          <div class="logo">
+              <i><img src="{% static 'images/presentation.png' %}" alt="" /></i> Decent Institute
+          </div>
+          
+      </div>
+      
+    
+        <div class="footer-section">
+        
+          <div class="footer-links">
+    
+            <ul>
+                <li>
+                    <a href="{% url "index" %}"><i class='bx bx-home'></i> Home</a>
+                  </li>
+              <li>
+                <a href="{% url "about" %}"><i class='bx bx-info-circle' ></i> About Us</a>
+              </li>
+              <li>
+                <a href="{% url "reviews" %}"><i class='bx bx-chat'></i> Reviews</a>
+              </li>
+              
+              {% comment %} <li>
+                <a href="#">Privacy</a>
+              </li> {% endcomment %}
+              <li>
+                <a href="{% url "contact" %}"><i class='bx bx-phone-call'></i> Contact Us</a>
+              </li>
+            </ul>
+          </div>
+    
+    
+          
+          <div class="main">
+            <div class="up">
+              <button class="card1" >
+                <a href="https://wa.me/919825754652">
+                <svg
+                  class="whatsapp"
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 24 24"
+                  height="30"
+                  width="30"
+                >
+                  <path
+                    d="M19.001 4.908A9.817 9.817 0 0 0 11.992 2C6.534 2 2.085 6.448 2.08 11.908c0 1.748.458 3.45 1.321 4.956L2 22l5.255-1.377a9.916 9.916 0 0 0 4.737 1.206h.005c5.46 0 9.908-4.448 9.913-9.913A9.872 9.872 0 0 0 19 4.908h.001ZM11.992 20.15A8.216 8.216 0 0 1 7.797 19l-.3-.18-3.117.818.833-3.041-.196-.314a8.2 8.2 0 0 1-1.258-4.381c0-4.533 3.696-8.23 8.239-8.23a8.2 8.2 0 0 1 5.825 2.413 8.196 8.196 0 0 1 2.41 5.825c-.006 4.55-3.702 8.24-8.24 8.24Zm4.52-6.167c-.247-.124-1.463-.723-1.692-.808-.228-.08-.394-.123-.556.124-.166.246-.641.808-.784.969-.143.166-.29.185-.537.062-.247-.125-1.045-.385-1.99-1.23-.738-.657-1.232-1.47-1.38-1.716-.142-.247-.013-.38.11-.504.11-.11.247-.29.37-.432.126-.143.167-.248.248-.413.082-.167.043-.31-.018-.433-.063-.124-.557-1.345-.765-1.838-.2-.486-.404-.419-.557-.425-.142-.009-.309-.009-.475-.009a.911.911 0 0 0-.661.31c-.228.247-.864.845-.864 2.067 0 1.22.888 2.395 1.013 2.56.122.167 1.742 2.666 4.229 3.74.587.257 1.05.408 1.41.523.595.19 1.13.162 1.558.1.475-.072 1.464-.6 1.673-1.178.205-.58.205-1.075.142-1.18-.061-.104-.227-.165-.475-.29Z"
+                  ></path>
+                </svg>
+              </a>
+              </button>
+              <button class="card2">
+                <a href="https://linkedin.com/in/hatim-moriswala-697676253" target="_blank" >
+                  <i class='bx bxl-linkedin linkedin'  style="font-size: 2.3rem;"></i>
+                </a>
+              </button>
+            </div>
+            <div class="down">
+              <button class="card3">
+                  <a href="https://www.instagram.com/decentinstitute.in?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" target="_blank">
+                  <i><img src="{% static 'images/instagram.png' %}" alt="" style="height:30px ;width:30px; " class="instagram" ></i>
+                </a>
+               
+              </button>
+              <button class="card4">
+                <a href="mailto:decentinstitutevadodara@gmail.com">
+                  <img src="{% static 'images/gmail.png' %}" alt="Email" style="height:30px; width:30px;">
+              </a>
+              
+               
+              </button>
+            </div>
+          </div>
+        </div>
+    
+        <div class="footer-bottom">
+          <p>
+            &copy; 2025 All rights reserved | <span>&#10084;</span> by Decent Institute
+          </p>
+        </div>
+      </div>
+    </footer>
+    
+  </body>
+</html>

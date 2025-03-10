@@ -1,0 +1,838 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Decent Institute</title>
+    <link rel="icon" href="{% static 'images/presentation.png' %}" type="image/png" />
+
+    <link rel="stylesheet" href="{% static 'css/style.css' %}" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Dosis:wght@200..800&family=Geist+Mono:wght@100..900&family=Sevillana&family=Sour+Gummy:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet" />
+    <link rel="stylesheet"
+    href="https://cdn.jsdelivr.net/npm/boxicons@latest/css/boxicons.min.css">
+    <!-- or -->
+    <link rel="stylesheet"
+    href="https://unpkg.com/boxicons@latest/css/boxicons.min.css">
+    <script src="https://unpkg.com/scrollreveal"></script>
+    
+  </head>
+
+  <body>
+    <div class="nav">
+      <div class="logoname">
+        <img src="{% static 'images/presentation.png' %}" alt="Logo" />
+        Decent Institute
+      </div>
+      <div class="nav-link">
+        <ul>
+          <li><a href="{% url 'index' %}"><i class="bx bx-home"></i> Home</a></li>
+            <li><a href="{% url "courses" %}"><i class='bx bxs-layer-plus'></i> Courses</a></li>
+            <li><a href="{% url 'reviews' %}"><i class='bx bx-chat'></i> Reviews</a></li>
+            <li><a href="{% url "contact" %}"><i class='bx bx-phone-call'></i> Contact</a></li>
+            <li><a href="{% url 'about' %}"><i class='bx bx-info-circle' ></i> About</a></li>
+            
+        </ul>
+        <div class="call">
+          <h5>Call Now :</h5>
+          <a href="tel:919825754652"> 919825754652</a>
+        </div>
+      </div>
+
+      <div class="hamburger" onclick="toggleMenu()">☰</div>
+        
+       
+    </div> 
+    <div class="bode">
+      <div class="glide">
+        <div class="glide__track" data-glide-el="track">
+          <ul class="glide__slides">
+            <li class="glide__slide">
+              <a href="{% url "python" %}"><img src="{% static 'images/pythonp.jpg' %}" alt="Image 1"></a>
+            </li>
+            <li class="glide__slide">
+              <a href="{% url "AutoCAD" %}">
+                <img src="{% static 'images/autocad.jpg' %}" alt="Image 2">
+              </a>
+            </li>
+            <li class="glide__slide">
+              <a href="{% url "Digital Marketing" %}">
+                <img src="{% static 'images/digital-marketing.jpg' %}" alt="Image 3">
+              </a>
+            </li>
+            <li class="glide__slide">
+              <a href="{% url 'Data Science' %}"><img src="{% static 'images/datascience.jpg' %}" alt="Image 4"></a>
+            </li>
+            <li class="glide__slide">
+              <a href="{% url 'dtp' %}">
+                <img src="{% static 'images/dtp.jpg' %}" alt="Image 5">
+              </a>
+            </li>
+            <li class="glide__slide">
+              <a href="{% url 'Database Management System' %}">
+                <img src="{% static 'images/dbms.jpg' %}" alt="Image 5">
+              </a>
+            </li>
+            <li class="glide__slide">
+              <a href="{% url "webdev1" %}">
+                <img src="{% static 'images/web-development.jpg' %}" alt="Image 5">
+              </a>
+            </li>
+            <li class="glide__slide">
+              <a href="{% url "webdev2" %}">
+                <img src="{% static 'images/backend.png' %}" alt="Image 5">
+              </a>
+              
+            </li>
+            
+            <li class="glide__slide">
+              <a href="{% url "tally_prime" %}">
+                <img src="{% static 'images/tally-prime.jpg' %}" alt="Image 5">
+              </a>
+            </li>
+            <li class="glide__slide">
+              <a href="{% url 'advnce_excel' %}">
+                <img src="{% static 'images/advance-excel.jpg' %}" alt="Image 5">
+              </a>
+            </li>
+            <li class="glide__slide">
+              <a href="{% url "graphic design" %}">
+                <img src="{% static 'images/graphic-design.jpg' %}" alt="Image 5">
+              </a>
+            </li>
+            <li class="glide__slide">
+             <a href="{% url 'Diploma in Hardware & Networking' %}">
+              <img src="{% static 'images/hardware-networking.jpg' %}" alt="Image 5">
+             </a>
+            </li>
+          </ul>
+        </div>
+        <div class="glide__arrows" data-glide-el="controls">
+          <button class="glide__arrow glide__arrow--left" data-glide-dir="<">&#8592;</button>
+          <button class="glide__arrow glide__arrow--right" data-glide-dir=">">&#8594;</button>
+        </div>
+      </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/@glidejs/glide"></script>
+    <script>
+      
+      document.addEventListener('DOMContentLoaded', function() {
+        const glide = new Glide('.glide', {
+          type: 'carousel',
+          perView: 3,  // Default to 3 slides for larger screens
+          gap: 10,     // Space between slides
+          focusAt: 'center',
+          autoplay: 2000,  // Auto-scroll every 2 seconds
+          animationDuration: 600,
+          animationTimingFunc: 'ease-in-out',
+        });
+      
+        glide.mount();
+      
+        // Update the perView property based on screen size (responsive behavior)
+        function updateSlides() {
+          if (window.innerWidth <= 768) {
+            glide.update({ perView: 1 });  // Show only 1 slide on mobile screens
+          } else {
+            glide.update({ perView: 3 });  // Show 3 slides for larger screens
+          }
+        }
+      
+        // Apply responsive behavior on page load and window resize
+        updateSlides();
+        window.addEventListener('resize', updateSlides);
+      });
+      
+  </script>
+   
+
+   
+    <div class="title">
+      <h3>Latest</h3>
+      <h2>Courses</h2>
+    </div>
+
+    <div class="course-container-ii" id="course-container-ii">
+ 
+      <div class="course-card-container-1 cc1">
+        <div class="course-card-1">
+          <div class="course-image">
+            <img src="{% static 'images/web-development.jpg' %}" alt="Web Development Course Image" />
+          </div>
+          <div class="course-details-1">
+            <h3>Web Development Course - 1</h3>
+            <p class="institute-name">
+              <strong>Decent Institute</strong>
+            </p>
+            <p class="course-overview-1">Learn the fundamentals of web development with HTML, CSS, and JavaScript. This course will teach you how to create responsive websites from scratch.Perfect for beginners or anyone looking to refresh their web development skills. Gain hands-on experience through real-world projects.</p>
+            <p class="faded-text"></p>
+            <!-- From Uiverse.io by alexmaracinaru --> 
+          <a class="cta" href="{% url "webdev1" %}">
+            <span>View Details</span>
+                <svg width="15px" height="10px" viewBox="0 0 13 10">
+               <path d="M1,5 L11,5"></path>
+              <polyline points="8 1 12 5 8 9"></polyline>
+                </svg>
+          </a>
+          </div>
+        </div>
+      </div>
+
+      <div class="course-card-container-1 cc2">
+        <div class="course-card-1">
+          <div class="course-image">
+            <img src="{% static 'images/backend.png' %}" alt="Backend Course Image" />
+          </div>
+          <div class="course-details-1">
+            <h3>Advanced Web Technology Course - 2</h3>
+            <p class="institute-name">
+              <strong>Decent Institute</strong>
+            </p>
+            <p class="course-overview-1">Master PHP and MySQL for backend web development. Learn how to create dynamic websites and handle databases with server-side programming.Suitable for developers who want to enhance their skills and dive deeper into backend technologies</p>
+            <p class="faded-text"></p>
+            <a class="cta" href="{% url "webdev2" %}">
+              <span>View Details</span>
+                  <svg width="15px" height="10px" viewBox="0 0 13 10">
+                 <path d="M1,5 L11,5"></path>
+                <polyline points="8 1 12 5 8 9"></polyline>
+                  </svg>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <div class="course-card-container-1 cc1">
+        <div class="course-card-1">
+          
+          <div class="course-image">
+            <img src="{% static 'images/pythonp.jpg' %}" alt="Python Programming Course Image" />
+          </div>
+          <div class="course-details-1">
+            <h3>Python Programming Course</h3>
+            <p class="institute-name">
+              <strong>Decent Institute</strong>
+            </p>
+            <p class="course-overview-1">Learn Python programming from scratch. Explore automation, data analysis, and web scraping while working on practical projects.Ideal for those looking to expand their skillset with Python, whether you're starting fresh or have some programming background.</p>
+            <p class="faded-text"></p>
+            <a class="cta" href="{% url "python" %}">
+              <span>View Details</span>
+                  <svg width="15px" height="10px" viewBox="0 0 13 10">
+                 <path d="M1,5 L11,5"></path>
+                <polyline points="8 1 12 5 8 9"></polyline>
+                  </svg>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <div class="course-card-container-1 cc2">
+        <div class="course-card-1">
+          <div class="course-image">
+            <img src="{% static 'images/video.png' %}" alt="Digital Marketing Course Image" />
+          </div>
+          <div class="course-details-1">
+            <h3>Diploma in Digital Marketing</h3>
+            <p class="institute-name">
+              <strong>Decent Institute</strong>
+            </p>
+            <p class="course-overview-1">Learn digital marketing strategies, including SEO, content marketing, and social media campaigns. Master the skills needed to promote businesses effectively online.
+              Perfect for anyone looking to build a career in online marketing or business owners wanting to promote their brand digitally.
+            </p>
+            <p class="faded-text"></p>
+            <a class="cta" href="{% url "Digital Marketing" %}">
+              <span>View Details</span>
+                  <svg width="15px" height="10px" viewBox="0 0 13 10">
+                 <path d="M1,5 L11,5"></path>
+                <polyline points="8 1 12 5 8 9"></polyline>
+                  </svg>
+            </a>
+          </div>
+
+        </div>
+      </div>
+      
+      <div class="course-card-container-1 cc1 ">
+        <div class="course-card-1">
+          <div class="course-image">
+            <img src="{% static 'images/datascience.jpg' %}" alt="Data Science & Analytics with Power BI Course Image" / >
+          </div>
+          <div class="course-details-1">
+            <h3>Data Science & Analytics with Power BI</h3>
+            <p class="institute-name">
+              <strong>Decent Institute</strong>
+            </p>
+            <p class="course-overview-1">
+              Learn the complete workflow in Power BI, from connecting data sources to advanced analytics using DAX, Python, and R. This course will help you design professional reports, optimize performance, and implement row-level security. Perfect for aspiring data analysts and scientists looking to build expertise in Power BI.
+            </p>
+            <p class="faded-text"></p>
+            <!-- From Uiverse.io by alexmaracinaru -->
+            <a class="cta" href="{% url 'Data Science' %}">
+              <span>View Details</span>
+              <svg width="15px" height="10px" viewBox="0 0 13 10">
+                <path d="M1,5 L11,5"></path>
+                <polyline points="8 1 12 5 8 9"></polyline>
+              </svg>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <div class="course-card-container-1 cc1">
+        <div class="course-card-1">
+          <div class="course-image">
+            <img src="{% static 'images/autocad.jpg' %}" alt="AutoCAD Course Image" />
+          </div>
+          <div class="course-details-1">
+            <h3>AutoCAD Course</h3>
+            <p class="institute-name">
+              <strong>Decent Institute</strong>
+            </p>
+            <p class="course-overview-1">
+              Master the essentials of AutoCAD, from 2D drafting to 3D modeling. This course is designed for engineers, architects, and designers looking to improve their CAD skills. Learn practical techniques through hands-on projects.
+            </p>
+            <p class="faded-text"></p>
+            <!-- From Uiverse.io by alexmaracinaru --> 
+            <a class="cta" href="{% url "AutoCAD" %}">
+              <span>View Details</span>
+              <svg width="15px" height="10px" viewBox="0 0 13 10">
+                <path d="M1,5 L11,5"></path>
+                <polyline points="8 1 12 5 8 9"></polyline>
+              </svg>
+            </a>
+          </div>
+        </div>
+      </div>
+      
+</div>
+
+    <div class="title-3">
+      <h3>Top</h3>
+      <h2>Courses</h2>
+    </div>
+
+    <div class="course-container-iii" id="course-container">
+  
+      <div class="course-card-container">
+        <div class="course-card">
+          <div class="course-image">
+            <img src="{% static 'images/tally-prime.jpg' %}" alt="Tally Prime Course Image" />
+          </div>
+          <div class="course-details">
+            <h3>Tally Prime with GST</h3>
+            <p class="institute-name">
+              <strong>Decent Institute</strong>
+            </p>
+            <p class="course-overview">Learn TallyPrime with GST, covering all the essential topics like GST Registration, Filing Returns, and more. This course is designed for both beginners and advanced learners, providing you with practical knowledge to handle GST and Tally software effectively.</p>
+            <p class="faded-text">Learn like never before with real-time data and case studies...</p>
+           
+            <a class="cta" href="{% url "tally_prime" %}">
+              <span>View Details</span>
+                  <svg width="15px" height="10px" viewBox="0 0 13 10">
+                 <path d="M1,5 L11,5"></path>
+                <polyline points="8 1 12 5 8 9"></polyline>
+                  </svg>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <div class="course-card-container">
+        <div class="course-card">
+          <div class="course-image">
+            <img src="{% static 'images/advance-excel.jpg' %}" alt="Advanced Excel Course Image" />
+          </div>
+          <div class="course-details">
+            <h3>Advanced Excel</h3>
+            <p class="institute-name">
+              <strong>Decent Institute</strong>
+            </p>
+            <p class="course-overview">Master Microsoft Excel from Beginner to Advanced with this comprehensive course. Learn Excel basics and advanced techniques like Macros, VBA, PivotTables, and dynamic formulas. Boost your productivity with automation and efficiency.</p>
+            <p class="faded-text">At the end of this course, you'll confidently use Excel for any task, automating day-to-day processes...</p>
+           
+            <a class="cta" href="{% url 'advnce_excel' %}">
+              <span>View Details</span>
+                  <svg width="15px" height="10px" viewBox="0 0 13 10">
+                 <path d="M1,5 L11,5"></path>
+                <polyline points="8 1 12 5 8 9"></polyline>
+                  </svg>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <div class="course-card-container">
+        <div class="course-card">
+          <div class="course-image">
+            <img src="{% static 'images/financialmanagement.jpeg' %}" alt="Diploma in Financial Management Image" />
+          </div>
+          <div class="course-details">
+            <h3>Diploma in Financial Management</h3>
+
+            <p class="course-overview">The Diploma in Financial Management equips you with skills across key financial management topics, including Tally Prime, Advance Excel, GST, Taxation, Banking, and Insurance.</p>
+            <p class="faded-text">This course includes expert training ..</p>
+            
+            <a class="cta" href="{% url "DFM" %}">
+              <span>View Details</span>
+                  <svg width="15px" height="10px" viewBox="0 0 13 10">
+                 <path d="M1,5 L11,5"></path>
+                <polyline points="8 1 12 5 8 9"></polyline>
+                  </svg>
+            </a>
+          </div>
+        </div>
+      </div>
+      
+      <div class="course-card-container">
+        <div class="course-card">
+          <div class="course-image">
+            <img src="{% static 'images/ccc.jpg' %}" alt="Diploma in Financial Management Image" />
+          </div>
+          <div class="course-details">
+            <h3>Certificate Course in Computer</h3>
+            <p class="course-overview">This basic IT Literacy program is designed to introduce the common man to computer usage, including essential skills like word processing, spreadsheet management, internet navigation, and more. It aims to empower individuals, including small business owners and housewives, to manage everyday tasks using computers.</p>
+            <p class="faded-text">Practical learning to help you efficiently manage personal and business tasks using technology.</p>
+            
+            <a class="cta" href="{% url 'ccc' %}">
+              <span>View Details</span>
+                  <svg width="15px" height="10px" viewBox="0 0 13 10">
+                 <path d="M1,5 L11,5"></path>
+                <polyline points="8 1 12 5 8 9"></polyline>
+                  </svg>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <div class="course-card-container">
+        <div class="course-card">
+          <div class="course-image">
+            <img src="{% static 'images/dtp.jpg' %}" alt="Diploma in Financial Management Image" />
+          </div>
+          <div class="course-details">
+            <h3>Certificate in DTP (Desktop Publishing)</h3>
+            <p class="course-overview">This course covers the essentials of graphic design and publishing using tools like Coral Draw, Page Maker, and Photoshop. Learn to create logos, brochures, flyers, social media ads, and more, while mastering photo editing, special effects, and multilingual publishing.
+            </p>
+            <p class="faded-text">Perfect for those pursuing a career in graphic design, advertising, or starting a DTP business.
+            </p>
+           
+            <a class="cta" href="{% url 'dtp' %}">
+              <span>View Details</span>
+                  <svg width="15px" height="10px" viewBox="0 0 13 10">
+                 <path d="M1,5 L11,5"></path>
+                <polyline points="8 1 12 5 8 9"></polyline>
+                  </svg>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <div class="course-card-container">
+        <div class="course-card">
+          <div class="course-image">
+            <img src="{% static 'images/graphic-design.jpg' %}" alt="Diploma in Graphic Designing Image" />
+          </div>
+          <div class="course-details">
+            <h3>Diploma in Graphic Designing</h3>
+            <p class="course-overview">
+              Master the art of graphic designing with industry-leading tools like Adobe Photoshop, Illustrator, CorelDRAW, and InDesign. Learn to create stunning visuals for branding, social media, marketing, and web design.
+            </p>
+           
+            <p class="faded-text">
+              Ideal for aspiring designers, freelancers, and those looking to enter the creative industry.
+            </p>
+            
+            <a class="cta" href="{% url "graphic design" %}">
+              <span>View Details</span>
+                  <svg width="15px" height="10px" viewBox="0 0 13 10">
+                 <path d="M1,5 L11,5"></path>
+                <polyline points="8 1 12 5 8 9"></polyline>
+                  </svg>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <div class="course-card-container">
+        <div class="course-card">
+            <div class="course-image">
+                <img src="{% static 'images/dbms.jpg' %}" alt="DBMS Course Image" />
+            </div>
+            <div class="course-details">
+                <h3>Database Management System (DBMS)</h3>
+                <p class="institute-name">
+                    <strong>Decent Institute</strong>
+                </p>
+                <p class="course-overview">Learn the fundamentals of Database Management Systems (DBMS), covering key concepts such as relational databases, SQL, database design, and advanced topics like concurrency control and indexing.</p>
+                <p class="faded-text">Master DBMS concepts and excel in competitive exams...</p>
+               
+                <a class="cta" href="{% url 'Database Management System' %}">
+                    <span>View Details</span>
+                    <svg width="15px" height="10px" viewBox="0 0 13 10">
+                        <path d="M1,5 L11,5"></path>
+                        <polyline points="8 1 12 5 8 9"></polyline>
+                    </svg>
+                </a>
+            </div>
+        </div>
+      </div>
+
+      <div class="course-card-container">
+        <div class="course-card">
+            <div class="course-image">
+                <img src="{% static 'images/google-sketchup.jpg' %}" alt="Google SketchUp Course Image" />
+            </div>
+            <div class="course-details">
+                <h3>Diploma in Google SketchUp</h3>
+                <p class="institute-name">
+                    <strong>Decent Institute</strong>
+                </p>
+                <p class="course-overview">Learn the basics and advanced features of Google SketchUp, including 3D modeling, rendering, and creating complete architectural plans. Master tools, plugins, and V-Ray integration for realistic renderings.</p>
+                <p class="faded-text">Become proficient in 3D modeling and design using Google SketchUp...</p>
+                <a class="cta" href="{% url 'Diploma in Google SketchUp' %}">
+                    <span>View Details</span>
+                    <svg width="15px" height="10px" viewBox="0 0 13 10">
+                        <path d="M1,5 L11,5"></path>
+                        <polyline points="8 1 12 5 8 9"></polyline>
+                    </svg>
+                </a>
+            </div>
+        </div>
+      </div>
+    
+      <div class="course-card-container">
+        <div class="course-card">
+          <div class="course-image">
+              <img src="{% static 'images/hardware-networking.jpg' %}" alt="Hardware & Networking Course Image" />
+          </div>
+          <div class="course-details">
+              <h3>Diploma in Hardware & Networking</h3>
+              <p class="institute-name">
+                  <strong>Decent Institute</strong>
+              </p>
+              <p class="course-overview">Learn the fundamentals of hardware and networking, covering components like BIOS, motherboard, CPU, RAM, and networking concepts such as LAN, WAN, and MAN.</p>
+              <p class="faded-text">Get hands-on experience in assembling, troubleshooting, and setting up networks...</p>
+              <a class="cta" href="{% url 'Diploma in Hardware & Networking' %}">
+                  <span>View Details</span>
+                  <svg width="15px" height="10px" viewBox="0 0 13 10">
+                      <path d="M1,5 L11,5"></path>
+                      <polyline points="8 1 12 5 8 9"></polyline>
+                  </svg>
+              </a>
+          </div>
+        </div>
+      </div>
+
+      <div class="course-card-container">
+        <div class="course-card">
+          <div class="course-image">
+            <img src="{% static 'images/acc.jpg' %}" alt="Awareness in Computer Concepts (ACC) Image" />
+          </div>
+          <div class="course-details">
+            <h3>Awareness in Computer Concepts (ACC)</h3>
+            <p class="course-overview">Learn the fundamentals of computer operations, document editing, email usage, internet browsing, and digital literacy. This course also covers financial literacy, online banking, and e-Governance services.</p>
+            <p class="faded-text">Ideal for beginners looking to develop essential computer skills for personal and professional use.</p>
+           
+            <a class="cta" href="{% url 'ACC' %}">
+              <span>View Details</span>
+                  <svg width="15px" height="10px" viewBox="0 0 13 10">
+                 <path d="M1,5 L11,5"></path>
+                <polyline points="8 1 12 5 8 9"></polyline>
+                  </svg>
+            </a>
+          </div>
+      </div>
+    </div>
+
+      <div class="course-card-container">
+        <div class="course-card">
+            <div class="course-image">
+                <img src="{% static 'images/data-entry.jpg' %}" alt="Data Entry Operator Course Image" />
+            </div>
+            <div class="course-details">
+                <h3>Certified Data Entry Operator/Call Center Executive</h3>
+                <p class="course-overview">Learn essential data entry skills, Microsoft Office tools, internet usage, email handling, and call center training. This job-oriented course prepares you for data entry and customer support roles.</p>
+                <p class="faded-text">Ideal for individuals looking to build a career in data entry, call centers, and office administration.</p>
+    
+                <a class="cta" href="{% url 'data entry' %}">
+                    <span>View Details</span>
+                    <svg width="15px" height="10px" viewBox="0 0 13 10">
+                        <path d="M1,5 L11,5"></path>
+                        <polyline points="8 1 12 5 8 9"></polyline>
+                    </svg>
+                </a>
+            </div>
+      </div>
+    </div>
+
+      <div class="course-card-container">
+        <div class="course-card">
+            <div class="course-image">
+                <img src="{% static 'images/spoken-english.jpg' %}" alt="Spoken English Course Image" />
+            </div>
+            <div class="course-details">
+                <h3>Spoken English Course</h3>
+                <p class="course-overview">Master spoken English with 1000+ words, grammar essentials, fluency training, and practical conversations. Improve pronunciation, listening, and confidence for travel, jobs, and exams.</p>
+                <p class="faded-text">Perfect for beginners aiming to speak fluently and prepare for TOEFL, IELTS, and job interviews.</p>
+    
+                <a class="cta" href="{% url 'spoken english' %}">
+                    <span>View Details</span>
+                    <svg width="15px" height="10px" viewBox="0 0 13 10">
+                        <path d="M1,5 L11,5"></path>
+                        <polyline points="8 1 12 5 8 9"></polyline>
+                    </svg>
+                </a>
+            </div>
+        </div>
+      </div>
+    </div>
+</div>
+
+    <div class="google-ad-container" id="adContainer">
+      <div class="google-ad-card">
+          <span class="ad-label">Sponsored Ad</span>
+        <span class="close-ad" onclick="closeAd()">×</span>
+          <img src="{% static 'images/rtoadd.png' %}" alt="RTO Services" class="google-ad-image">
+          <div class="google-ad-content">
+              <h2 class="google-ad-title">RTO Services - Fast & Reliable</h2>
+              <p class="google-ad-text">Vehicle registration, driving license, RC transfer, and more! Get your RTO work done quickly & hassle-free.</p>
+              <a href="https://rtoservices.netlify.app/" target="_blank" class="google-ad-link">Visit Now</a>
+          </div>
+      </div>
+  </div>
+
+<footer class="footer">
+  <div class="container">
+    <div class="footer-about">
+      <div class="logo">
+          <i><img src="{% static 'images/presentation.png' %}" alt="" /></i> Decent Institute
+      </div>
+      
+  </div>
+  
+
+    <div class="footer-section">
+    
+      <div class="footer-links">
+
+        <ul>
+            <li>
+                <a href="{% url "index" %}"><i class='bx bx-home'></i> Home</a>
+              </li>
+          <li>
+            <a href="{% url "about" %}"><i class='bx bx-info-circle' ></i> About Us</a>
+          </li>
+          <li>
+            <a href="{% url "reviews" %}"><i class='bx bx-chat'></i> Reviews</a>
+          </li>
+          
+          {% comment %} <li>
+            <a href="#">Privacy</a>
+          </li> {% endcomment %}
+          <li>
+            <a href="{% url "contact" %}"><i class='bx bx-phone-call'></i> Contact Us</a>
+          </li>
+        </ul>
+      </div>
+
+
+      
+      <div class="main">
+        <div class="up">
+          <button class="card1" >
+            <a href="https://wa.me/919825754652">
+            <svg
+              class="whatsapp"
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 24 24"
+              height="30"
+              width="30"
+            >
+              <path
+                d="M19.001 4.908A9.817 9.817 0 0 0 11.992 2C6.534 2 2.085 6.448 2.08 11.908c0 1.748.458 3.45 1.321 4.956L2 22l5.255-1.377a9.916 9.916 0 0 0 4.737 1.206h.005c5.46 0 9.908-4.448 9.913-9.913A9.872 9.872 0 0 0 19 4.908h.001ZM11.992 20.15A8.216 8.216 0 0 1 7.797 19l-.3-.18-3.117.818.833-3.041-.196-.314a8.2 8.2 0 0 1-1.258-4.381c0-4.533 3.696-8.23 8.239-8.23a8.2 8.2 0 0 1 5.825 2.413 8.196 8.196 0 0 1 2.41 5.825c-.006 4.55-3.702 8.24-8.24 8.24Zm4.52-6.167c-.247-.124-1.463-.723-1.692-.808-.228-.08-.394-.123-.556.124-.166.246-.641.808-.784.969-.143.166-.29.185-.537.062-.247-.125-1.045-.385-1.99-1.23-.738-.657-1.232-1.47-1.38-1.716-.142-.247-.013-.38.11-.504.11-.11.247-.29.37-.432.126-.143.167-.248.248-.413.082-.167.043-.31-.018-.433-.063-.124-.557-1.345-.765-1.838-.2-.486-.404-.419-.557-.425-.142-.009-.309-.009-.475-.009a.911.911 0 0 0-.661.31c-.228.247-.864.845-.864 2.067 0 1.22.888 2.395 1.013 2.56.122.167 1.742 2.666 4.229 3.74.587.257 1.05.408 1.41.523.595.19 1.13.162 1.558.1.475-.072 1.464-.6 1.673-1.178.205-.58.205-1.075.142-1.18-.061-.104-.227-.165-.475-.29Z"
+              ></path>
+            </svg>
+          </a>
+          </button>
+          <button class="card2">
+            <a href="https://linkedin.com/in/hatim-moriswala-697676253" target="_blank" >
+              <i class='bx bxl-linkedin linkedin'  ></i>
+            </a>
+          </button>
+        </div>
+        <div class="down">
+          <button class="card3">
+              <a href="https://www.instagram.com/decentinstitute.in?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" target="_blank">
+              <i><img src="{% static 'images/instagram.png' %}" alt="" style="height:30px ;width:30px; " class="instagram" ></i>
+            </a>
+           
+          </button>
+          <button class="card4">
+            <a href="mailto:decentinstitutevadodara@gmail.com">
+              <img src="{% static 'images/gmail.png' %}" alt="Email" style="height:30px; width:30px;">
+          </a>
+          
+           
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <p>
+        &copy; 2025 All rights reserved | <span>&#10084;</span> by Decent Institute
+      </p>
+    </div>
+  </div>
+</footer>
+<script>
+  function toggleMenu() {
+    const navLink = document.querySelector('.nav-link');
+    navLink.classList.toggle('show');
+}
+
+  let lastScrollTop = 0 // Variable to store the last scroll position
+  const navbar = document.querySelector('.nav')
+  const hamburger = document.querySelector('.hamburger')
+  const links = document.querySelector('.links')
+  
+  // Function to handle scrolling behavior
+  window.addEventListener('scroll', function () {
+    let currentScroll = window.pageYOffset || document.documentElement.scrollTop
+  
+    if (currentScroll > lastScrollTop) {
+      // Scroll down
+      navbar.style.transform = 'translateY(-100%)' // Hide navbar when scrolling down
+    } else {
+      // Scroll up
+      navbar.style.transform = 'translateY(0)' // Show navbar when scrolling up
+    }
+  
+    lastScrollTop = currentScroll <= 0 ? 0 : currentScroll // Prevent negative values
+  })
+  document.addEventListener("DOMContentLoaded", function () {
+    // Get the current page URL
+    const currentPage = window.location.pathname;
+
+    // Select all navigation links
+    const navLinks = document.querySelectorAll(".nav-link ul li a");
+
+    navLinks.forEach(link => {
+        if (link.getAttribute("href") === currentPage) {
+            link.classList.add("active"); // Add 'active' class to the matching link
+        }
+    });
+});
+
+  
+
+
+  //**************************************************************************
+
+  const sr = ScrollReveal ({
+    distance:'60px',
+    duration:2500,
+    delay:400,
+    reset:true
+     
+
+
+  })
+  sr.reveal('.one',{delay:300, origin:'left'})
+  sr.reveal('.two',{delay:330, origin:'top'})
+  sr.reveal('.three',{delay:300, origin:'right'})
+  sr.reveal('.hero .bg-img h1',{delay:150, origin:'top'})
+  sr.reveal('.hero .bg-img a',{delay:120, origin:'bottom'})
+  sr.reveal('.title h3',{delay:150, origin:'left'})
+  sr.reveal('.title h2',{delay:150, origin:'right'})
+  sr.reveal('.title-2 h3',{delay:150, origin:'left'})
+  sr.reveal('.title-2 h2',{delay:160, origin:'right'})
+  sr.reveal('.title-3 h3',{delay:150, origin:'left'})
+  sr.reveal('.title-3 h2',{delay:150, origin:'right'})
+  sr.reveal('.cc1', {
+    delay: 160, 
+    origin: 'left',
+  
+    duration: 1000,
+    interval: 200, // Staggered effect
+    easing: 'ease-in-out'
+  });
+  sr.reveal('.cc2', {
+    delay: 160, 
+    origin: 'right',
+  
+    duration: 1000,
+    interval: 200, // Staggered effect
+    easing: 'ease-in-out'
+  });
+
+  sr.reveal('.review-list ',{delay:150, origin:'left'})
+  sr.reveal('.review-form-container ',{delay:150, origin:'right'})
+  sr.reveal('.contact-form ',{delay:150, origin:'left'})
+  sr.reveal('.contact-form h2 ',{delay:150, origin:'top'})
+  sr.reveal('.contact-info',{delay:160, origin:'right'})
+
+  // ***********************************************
+  // Disable Right Click
+    document.addEventListener('contextmenu', event => event.preventDefault());
+
+    // Disable Keyboard Shortcuts for Inspect Element
+    document.addEventListener('keydown', function (event) {
+      if (event.ctrlKey && (event.key === 'u' || event.key === 'U' || event.key === 's' || event.key === 'S' || event.key === 'p' || event.key === 'P')) {
+          event.preventDefault();
+      }
+      if (event.ctrlKey && event.shiftKey && (event.key === 'I' || event.key === 'J' || event.key === 'C')) {
+          event.preventDefault();
+    }
+    if (event.key === 'F12') {
+        event.preventDefault();
+    }
+  });
+
+    // Detect DevTools Opening (No alert, just logs)
+    console.log('%c ', 'font-size: 1px; background: url() no-repeat;');
+
+
+  // ***********************************************
+    function closeAd() {
+      document.getElementById("adContainer").style.display = "none";
+        }
+
+  // ***********************************************
+
+
+
+      document.addEventListener("DOMContentLoaded", function () {
+          document.getElementById("contact-link").addEventListener("click", function (event) {
+              event.preventDefault(); // Prevent page reload
+      
+              // Hide specific sections
+              let sectionsToHide = [
+                  "title",
+                  "course-container-ii",
+                  "title-3",
+                  "course-container",
+                  "pagination",
+                  "about-us-container",
+                  "title-2",
+                  "reviews-section"
+              ];
+      
+              sectionsToHide.forEach(function (id) {
+                  let element = document.getElementById(id);
+                  if (element) {
+                      element.style.display = "none";
+                  }
+              });
+      
+              // Show the contact section
+              document.querySelector(".contact").style.display = "block";
+          });
+      });
+</script>
+
+
+
+</body>
+</html>

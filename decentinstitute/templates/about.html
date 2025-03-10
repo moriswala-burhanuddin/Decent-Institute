@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Decent Institute</title>
+    <link rel="icon" href="{% static 'images/presentation.png' %}" type="image/png" />
+
+    <link rel="stylesheet" href="{% static 'css/style.css' %}" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Dosis:wght@200..800&family=Geist+Mono:wght@100..900&family=Sevillana&family=Sour+Gummy:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet" />
+    <link rel="stylesheet"
+    href="https://cdn.jsdelivr.net/npm/boxicons@latest/css/boxicons.min.css">
+    <!-- or -->
+    <link rel="stylesheet"
+    href="https://unpkg.com/boxicons@latest/css/boxicons.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/@glidejs/glide"></script>
+  </head>
+
+  <body>
+    <div class="nav">
+      <div class="logoname">
+        <img src="{% static 'images/presentation.png' %}" alt="Logo" />
+        Decent Institute
+      </div>
+      <div class="nav-link">
+        <ul>
+          <li><a href="{% url 'index' %}"><i class="bx bx-home"></i> Home</a></li>
+            <li><a href="{% url "courses" %}"><i class='bx bxs-layer-plus'></i> Courses</a></li>
+            <li><a href="{% url 'reviews' %}"><i class='bx bx-chat'></i> Reviews</a></li>
+            <li><a href="{% url "contact" %}"><i class='bx bx-phone-call'></i> Contact</a></li>
+            <li><a href="{% url 'about' %}"><i class='bx bx-info-circle' ></i> About</a></li>
+            
+        </ul>
+        <div class="call">
+          <h5>Call Now :</h5>
+          <a href="tel:919825754652"> 919825754652</a>
+        </div>
+      </div>
+
+      <div class="hamburger" onclick="toggleMenu()">☰</div>
+        
+       
+    </div> 
+    
+  
+
+    <div class="bode">
+      <div class="glide">
+        <div class="glide__track" data-glide-el="track">
+          <ul class="glide__slides">
+            <li class="glide__slide">
+              <a href="{% url "python" %}"><img src="{% static 'images/pythonp.jpg' %}" alt="Image 1"></a>
+            </li>
+            <li class="glide__slide">
+              <a href="{% url "AutoCAD" %}">
+                <img src="{% static 'images/autocad.jpg' %}" alt="Image 2">
+              </a>
+            </li>
+            <li class="glide__slide">
+              <a href="{% url "Digital Marketing" %}">
+                <img src="{% static 'images/digital-marketing.jpg' %}" alt="Image 3">
+              </a>
+            </li>
+            <li class="glide__slide">
+              <a href="{% url 'Data Science' %}"><img src="{% static 'images/datascience.jpg' %}" alt="Image 4"></a>
+            </li>
+            <li class="glide__slide">
+              <a href="{% url 'dtp' %}">
+                <img src="{% static 'images/dtp.jpg' %}" alt="Image 5">
+              </a>
+            </li>
+            <li class="glide__slide">
+              <a href="{% url 'Database Management System' %}">
+                <img src="{% static 'images/dbms.jpg' %}" alt="Image 5">
+              </a>
+            </li>
+            <li class="glide__slide">
+              <a href="{% url "webdev1" %}">
+                <img src="{% static 'images/web-development.jpg' %}" alt="Image 5">
+              </a>
+            </li>
+            <li class="glide__slide">
+              <a href="{% url "webdev2" %}">
+                <img src="{% static 'images/backend.png' %}" alt="Image 5">
+              </a>
+              
+            </li>
+            
+            <li class="glide__slide">
+              <a href="{% url "tally_prime" %}">
+                <img src="{% static 'images/tally-prime.jpg' %}" alt="Image 5">
+              </a>
+            </li>
+            <li class="glide__slide">
+              <a href="{% url 'advnce_excel' %}">
+                <img src="{% static 'images/advance-excel.jpg' %}" alt="Image 5">
+              </a>
+            </li>
+            <li class="glide__slide">
+              <a href="{% url "graphic design" %}">
+                <img src="{% static 'images/graphic-design.jpg' %}" alt="Image 5">
+              </a>
+            </li>
+            <li class="glide__slide">
+             <a href="{% url 'Diploma in Hardware & Networking' %}">
+              <img src="{% static 'images/hardware-networking.jpg' %}" alt="Image 5">
+             </a>
+            </li>
+          </ul>
+        </div>
+        <div class="glide__arrows" data-glide-el="controls">
+          <button class="glide__arrow glide__arrow--left" data-glide-dir="<">&#8592;</button>
+          <button class="glide__arrow glide__arrow--right" data-glide-dir=">">&#8594;</button>
+        </div>
+      </div>
+    </div>
+<script>
+      
+    document.addEventListener('DOMContentLoaded', function() {
+      const glide = new Glide('.glide', {
+        type: 'carousel',
+        perView: 3,  // Default to 3 slides for larger screens
+        gap: 10,     // Space between slides
+        focusAt: 'center',
+        autoplay: 2000,  // Auto-scroll every 2 seconds
+        animationDuration: 600,
+        animationTimingFunc: 'ease-in-out',
+      });
+    
+      glide.mount();
+    
+      // Update the perView property based on screen size (responsive behavior)
+      function updateSlides() {
+        if (window.innerWidth <= 768) {
+          glide.update({ perView: 1 });  // Show only 1 slide on mobile screens
+        } else {
+          glide.update({ perView: 3 });  // Show 3 slides for larger screens
+        }
+      }
+    
+      // Apply responsive behavior on page load and window resize
+      updateSlides();
+      window.addEventListener('resize', updateSlides);
+    });
+    
+</script>
+    
+
+    
+    <div class="about-us-container" id="about-us-container">
+      <div class="about-us-card">
+        <div class="about-us-header">
+          <h1>DECENT INSTITUTE</h1>
+          <p class="subtitle">A Government Recognized Computer Training Centre</p>
+        </div>
+        <div class="about-us-content">
+          <div class="introduction">
+            <h2><i class='bx bx-info-circle' ></i>ABOUT US:</h2>
+            <h3><i><img src="{% static 'images/idea.png' %}" alt="" class="ai" /></i>INTRODUCTION</h3>
+            <p>Our aim is to make one person in every family digitally literate, aligning with the Prime Minister's vision of "Digital India". DECENT COMPUTER EDUCATION focuses on providing computer training from basic to advanced level courses at affordable fees, enabling people to develop computer skills and become digitally empowered.</p>
+            <h3><i class='bx bx-objects-horizontal-left'></i> OUR AIM:</h3>
+            <p>We aim to create digitally skilled individuals who can access online services, enhance their professional prospects, and contribute to the digital economy. Our goal is to make individuals digitally literate and help them succeed in the modern job market.</p>
+          </div>
+          <div class="courses-offered">
+            <h2><i class='bx bx-expand-horizontal'></i> Courses Offered:</h2>
+            <ul>
+              <li>BASIC, INTERNET, CCC, CCA</li>
+              <li>TALLY, D.T.P., WEB DESIGNING</li>
+              <li>C, C++, AutoCAD, .NET, JAVA, VISUAL BASIC</li>
+              <li>SOFTWARE DEVELOPMENT, HARDWARE & NETWORKING</li>
+            </ul>
+          </div>
+          <div class="what-students-get">
+            <h2><i class='bx bx-question-mark' ></i>What do STUDENTS get from DCE?</h2>
+            <ul>
+              <li>
+                <strong>Government Recognition:</strong> Every person who passes the computer examination is issued a Government Authorized Certificate recognized by the Government of India.
+              </li>
+              <li>
+                <strong>Basic Computer Concepts Awareness:</strong> Students gain awareness of different computer benefits and fundamental knowledge.
+              </li>
+              <li>
+                <strong>Computer Accounting, Designing, Web Page Creation:</strong> Learn important skills related to computer accounting and design.
+              </li>
+              <li>
+                <strong>Ability to Seek Information Online:</strong> Students will learn how to search for information related to jobs, government services, and online banking.
+              </li>
+              <li>
+                <strong>Awareness of Online Services:</strong> Exposure to e-commerce, online transactions, communication channels like social media, and voice chatting.
+              </li>
+            </ul>
+          </div>
+          <div class="job-guarantee">
+            <h3>100% JOB ASSISTANCE</h3>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    {% comment %} <div class="google-ad-container" id="adContainer">
+      <div class="google-ad-card">
+          <span class="ad-label">Sponsored Ad</span>
+        <span class="close-ad" onclick="closeAd()">×</span>
+          <img src="{% static 'i{% static 'ages/rtoadd.png' %}' %}" alt="RTO Services" class="google-ad-image">
+          <div class="google-ad-content">
+              <h2 class="google-ad-title">RTO Services - Fast & Reliable</h2>
+              <p class="google-ad-text">Vehicle registration, driving license, RC transfer, and more! Get your RTO work done quickly & hassle-free.</p>
+              <a href="https://rtoservices.netlify.app/" target="_blank" class="google-ad-link">Visit Now</a>
+          </div>
+      </div>
+  </div> {% endcomment %}
+  <script>
+    function closeAd() {
+    document.getElementById("adContainer").style.display = "none";
+}
+</script>
+
+<footer class="footer">
+  <div class="container">
+    <div class="footer-about">
+      <div class="logo">
+          <i><img src="{% static 'images/presentation.png' %}" alt="" /></i> Decent Institute
+      </div>
+      
+  </div>
+  
+
+    <div class="footer-section">
+    
+      <div class="footer-links">
+
+        <ul>
+            <li>
+                <a href="{% url "index" %}"><i class='bx bx-home'></i> Home</a>
+              </li>
+          <li>
+            <a href="{% url "about" %}"><i class='bx bx-info-circle' ></i> About Us</a>
+          </li>
+          <li>
+            <a href="{% url "reviews" %}"><i class='bx bx-chat'></i> Reviews</a>
+          </li>
+          
+          {% comment %} <li>
+            <a href="#">Privacy</a>
+          </li> {% endcomment %}
+          <li>
+            <a href="{% url "contact" %}"><i class='bx bx-phone-call'></i> Contact Us</a>
+          </li>
+        </ul>
+      </div>
+
+
+      
+      <div class="main">
+        <div class="up">
+          <button class="card1" >
+            <a href="https://wa.me/919825754652">
+            <svg
+              class="whatsapp"
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 24 24"
+              height="30"
+              width="30"
+            >
+              <path
+                d="M19.001 4.908A9.817 9.817 0 0 0 11.992 2C6.534 2 2.085 6.448 2.08 11.908c0 1.748.458 3.45 1.321 4.956L2 22l5.255-1.377a9.916 9.916 0 0 0 4.737 1.206h.005c5.46 0 9.908-4.448 9.913-9.913A9.872 9.872 0 0 0 19 4.908h.001ZM11.992 20.15A8.216 8.216 0 0 1 7.797 19l-.3-.18-3.117.818.833-3.041-.196-.314a8.2 8.2 0 0 1-1.258-4.381c0-4.533 3.696-8.23 8.239-8.23a8.2 8.2 0 0 1 5.825 2.413 8.196 8.196 0 0 1 2.41 5.825c-.006 4.55-3.702 8.24-8.24 8.24Zm4.52-6.167c-.247-.124-1.463-.723-1.692-.808-.228-.08-.394-.123-.556.124-.166.246-.641.808-.784.969-.143.166-.29.185-.537.062-.247-.125-1.045-.385-1.99-1.23-.738-.657-1.232-1.47-1.38-1.716-.142-.247-.013-.38.11-.504.11-.11.247-.29.37-.432.126-.143.167-.248.248-.413.082-.167.043-.31-.018-.433-.063-.124-.557-1.345-.765-1.838-.2-.486-.404-.419-.557-.425-.142-.009-.309-.009-.475-.009a.911.911 0 0 0-.661.31c-.228.247-.864.845-.864 2.067 0 1.22.888 2.395 1.013 2.56.122.167 1.742 2.666 4.229 3.74.587.257 1.05.408 1.41.523.595.19 1.13.162 1.558.1.475-.072 1.464-.6 1.673-1.178.205-.58.205-1.075.142-1.18-.061-.104-.227-.165-.475-.29Z"
+              ></path>
+            </svg>
+          </a>
+          </button>
+          <button class="card2">
+            <a href="https://linkedin.com/in/hatim-moriswala-697676253" target="_blank" >
+              <i class='bx bxl-linkedin linkedin'  ></i>
+            </a>
+          </button>
+        </div>
+        <div class="down">
+          <button class="card3">
+              <a href="https://www.instagram.com/decentinstitute.in?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" target="_blank">
+              <i><img src="{% static 'images/instagram.png' %}" alt="" style="height:30px ;width:30px; " class="instagram" ></i>
+            </a>
+           
+          </button>
+          <button class="card4">
+            <a href="mailto:decentinstitutevadodara@gmail.com">
+              <img src="{% static 'images/gmail.png' %}" alt="Email" style="height:30px; width:30px;">
+          </a>
+          
+           
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <p>
+        &copy; 2025 All rights reserved | <span>&#10084;</span> by Decent Institute
+      </p>
+    </div>
+  </div>
+</footer>
+<script src="https://unpkg.com/scrollreveal"></script>
+<script src="{% static 'javascript/script.js' %}"></script>
+</body>
+</html>

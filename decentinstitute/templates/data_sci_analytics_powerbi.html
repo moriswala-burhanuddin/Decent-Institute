@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Diploma in Digital Marketing</title>
+
+    <link rel="icon" href="{% static 'images/presentation.png' %}" type="image/png" />
+    <link rel="stylesheet" href="{% static 'css/styleforcoursedetail.css' %}" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Dosis:wght@200..800&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/boxicons@latest/css/boxicons.min.css">
+  </head>
+  <body>
+    <div class="nav">
+      <div class="logoname">
+        <img src="{% static 'images/presentation.png' %}" alt="Logo" />
+        Decent Institute
+      </div>
+      <div class="nav-link">
+        <ul>
+          <li><a href="{% url 'index' %}"><i class="bx bx-home"></i> Home</a></li>
+            <li><a href="{% url "courses" %}"><i class='bx bxs-layer-plus'></i> Courses</a></li>
+            <li><a href="{% url 'reviews' %}"><i class='bx bx-chat'></i> Reviews</a></li>
+            <li><a href="{% url "contact" %}"><i class='bx bx-phone-call'></i> Contact</a></li>
+            <li><a href="{% url 'about' %}"><i class='bx bx-info-circle' ></i> About</a></li>
+            
+        </ul>
+        <div class="call">
+          <h5>Call Now :</h5>
+          <a href="tel:919825754652"> 919825754652</a>
+        </div>
+      </div>
+
+      <div class="hamburger" onclick="toggleMenu()">☰</div>
+        
+       
+    </div> 
+    
+    <div class="course-detail">
+        <div class="course-header">
+          <h1 class="course-title">Data Science & Analytics with Power BI</h1>
+          <div class="course-banner-container">
+            <img src="{% static 'images/datascience.jpg' %}" alt="Power BI Analytics" class="course-banner" />
+          </div>
+        </div>
+  
+        <section class="course-overview">
+          <h2>What You'll Learn</h2>
+          <p>Master Data Science & Analytics using Power BI to unlock powerful insights and drive informed business decisions.</p>
+  
+          <div class="learning-objectives">
+            <ul>
+              <li>Complete workflow in Power BI from A to Z</li>
+              <li>Advanced analytics with DAX calculated columns & measures</li>
+              <li>Master Power BI Desktop, Power BI Cloud & Power BI Mobile</li>
+              <li>Design and implement professional reports</li>
+              <li>Learn storytelling with data to effectively visualize your findings</li>
+              <li>Advanced features like working with parameters, using R scripts, and Row-Level Security</li>
+              <li>Optimize performance in Power BI reports</li>
+              <li>Time intelligence and forecasting</li>
+              <li>Integrate Python & R with Power BI for data analysis</li>
+            </ul>
+          </div>
+        </section>
+  
+        <section class="course-content">
+          <h2>Course Modules</h2>
+          <div class="modules">
+            <div class="module">
+              <h3>Module 1: Introduction to Power BI</h3>
+              <p>Learn the fundamentals of Power BI, including the Power BI Desktop interface and capabilities.</p>
+            </div>
+            <div class="module">
+              <h3>Module 2: Data Import & Preparation</h3>
+              <p>Learn how to connect Power BI to various data sources and clean the data for analysis.</p>
+            </div>
+            <div class="module">
+              <h3>Module 3: Data Modeling</h3>
+              <p>Understand the concept of data modeling, including relationships and calculated columns.</p>
+            </div>
+            <div class="module">
+              <h3>Module 4: DAX and Advanced Analytics</h3>
+              <p>Master DAX (Data Analysis Expressions) to create calculated measures and perform complex analysis.</p>
+            </div>
+            <div class="module">
+              <h3>Module 5: Visualizing Data</h3>
+              <p>Learn the different types of Power BI visualizations and how to use them effectively to present data.</p>
+            </div>
+            <div class="module">
+              <h3>Module 6: Power BI Service & Cloud Integration</h3>
+              <p>Learn how to deploy reports to the Power BI service and access them via the cloud.</p>
+            </div>
+            <div class="module">
+              <h3>Module 7: Row-Level Security & Optimization</h3>
+              <p>Implement Row-Level Security (RLS) and optimize Power BI reports for better performance.</p>
+            </div>
+            <div class="module">
+              <h3>Module 8: Integrating Python & R in Power BI</h3>
+              <p>Use Python and R scripts to perform advanced data analytics within Power BI.</p>
+            </div>
+          </div>
+        </section>
+  
+        <section class="mini-projects">
+          <h2>Mini Projects</h2>
+          <p>Below are some mini projects to help you apply your learning from the course:</p>
+          <div class="projects-list">
+            <ul>
+              <li>Create a dashboard with KPIs using Power BI</li>
+              <li>Use DAX to perform advanced financial analysis</li>
+              <li>Implement Row-Level Security in your reports</li>
+              <li>Create a forecasting model using time intelligence</li>
+              <li>Optimize Power BI reports for performance</li>
+              <li>Integrate Python & R for data analysis within Power BI</li>
+              <li>Design a professional report for executive presentation</li>
+              <li>Deploy your report to Power BI Cloud and share with stakeholders</li>
+            </ul>
+          </div>
+        </section>
+        <section class="course-audience">
+            <h2>Requirements</h2>
+            <ul>
+                <li>A computer with Windows operating system</li>
+                <li>Power BI Desktop (free download)</li>
+                <li>For some modules with Power BI Service (Cloud), a school or work email address is required to sign up (free 60-day trial)</li>
+            </ul>
+        </section>
+        <section class="course-audience">
+            <h2>Who This Course Is For</h2>
+            <ul>
+                <li>Anyone looking for a complete and comprehensive intro to Power BI</li>
+                <li>Anyone interested in learning advanced Power BI skills such as DAX for calculated columns and measures</li>
+                <li>Anyone looking to pursue a career as a data analyst, data scientist, or BI consultant</li>
+                <li>Anyone who has never used Power BI before and is looking for a hands-on approach to learn it</li>
+            </ul>
+        </section>
+      </div>
+  
+  
+    <footer class="footer">
+        <div class="container">
+          <div class="footer-about">
+            <div class="logo">
+                <i><img src="{% static 'images/presentation.png' %}" alt="" /></i> Decent Institute
+            </div>
+            
+        </div>
+        
+      
+          <div class="footer-section">
+          
+            <div class="footer-links">
+      
+              <ul>
+                  <li>
+                      <a href="{% url "index" %}"><i class='bx bx-home'></i> Home</a>
+                    </li>
+                <li>
+                  <a href="{% url "about" %}"><i class='bx bx-info-circle' ></i> About Us</a>
+                </li>
+                <li>
+                  <a href="{% url "reviews" %}"><i class='bx bx-chat'></i> Reviews</a>
+                </li>
+                
+                {% comment %} <li>
+                  <a href="#">Privacy</a>
+                </li> {% endcomment %}
+                <li>
+                  <a href="{% url "contact" %}"><i class='bx bx-phone-call'></i> Contact Us</a>
+                </li>
+              </ul>
+            </div>
+      
+      
+            
+            <div class="main">
+              <div class="up">
+                <button class="card1" >
+                  <a href="https://wa.me/919825754652">
+                  <svg
+                    class="whatsapp"
+                    xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 24 24"
+                    height="30"
+                    width="30"
+                  >
+                    <path
+                      d="M19.001 4.908A9.817 9.817 0 0 0 11.992 2C6.534 2 2.085 6.448 2.08 11.908c0 1.748.458 3.45 1.321 4.956L2 22l5.255-1.377a9.916 9.916 0 0 0 4.737 1.206h.005c5.46 0 9.908-4.448 9.913-9.913A9.872 9.872 0 0 0 19 4.908h.001ZM11.992 20.15A8.216 8.216 0 0 1 7.797 19l-.3-.18-3.117.818.833-3.041-.196-.314a8.2 8.2 0 0 1-1.258-4.381c0-4.533 3.696-8.23 8.239-8.23a8.2 8.2 0 0 1 5.825 2.413 8.196 8.196 0 0 1 2.41 5.825c-.006 4.55-3.702 8.24-8.24 8.24Zm4.52-6.167c-.247-.124-1.463-.723-1.692-.808-.228-.08-.394-.123-.556.124-.166.246-.641.808-.784.969-.143.166-.29.185-.537.062-.247-.125-1.045-.385-1.99-1.23-.738-.657-1.232-1.47-1.38-1.716-.142-.247-.013-.38.11-.504.11-.11.247-.29.37-.432.126-.143.167-.248.248-.413.082-.167.043-.31-.018-.433-.063-.124-.557-1.345-.765-1.838-.2-.486-.404-.419-.557-.425-.142-.009-.309-.009-.475-.009a.911.911 0 0 0-.661.31c-.228.247-.864.845-.864 2.067 0 1.22.888 2.395 1.013 2.56.122.167 1.742 2.666 4.229 3.74.587.257 1.05.408 1.41.523.595.19 1.13.162 1.558.1.475-.072 1.464-.6 1.673-1.178.205-.58.205-1.075.142-1.18-.061-.104-.227-.165-.475-.29Z"
+                    ></path>
+                  </svg>
+                </a>
+                </button>
+                <button class="card2">
+                  <a href="https://linkedin.com/in/hatim-moriswala-697676253" target="_blank" >
+                    <i class='bx bxl-linkedin linkedin'  style="font-size: 2.3rem;" ></i>
+                  </a>
+                </button>
+              </div>
+              <div class="down">
+                <button class="card3">
+                    <a href="https://www.instagram.com/decentinstitute.in?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" target="_blank">
+                    <i><img src="{% static 'images/instagram.png' %}" alt="" style="height:30px ;width:30px; " class="instagram" ></i>
+                  </a>
+                 
+                </button>
+                <button class="card4">
+                  <a href="mailto:decentinstitutevadodara@gmail.com">
+                    <img src="{% static 'images/gmail.png' %}" alt="Email" style="height:30px; width:30px;">
+                </a>
+                
+                 
+                </button>
+              </div>
+            </div>
+          </div>
+      
+          <div class="footer-bottom">
+            <p>
+              &copy; 2025 All rights reserved | <span>&#10084;</span> by Decent Institute
+            </p>
+          </div>
+        </div>
+      </footer>
+      <script>
+        function toggleMenu() {
+            const navLink = document.querySelector('.nav-link');
+            navLink.classList.toggle('show');
+        }
+        let lastScrollTop = 0 // Variable to store the last scroll position
+        const navbar = document.querySelector('.nav')
+        const hamburger = document.querySelector('.hamburger')
+        const links = document.querySelector('.links')
+        
+        // Function to handle scrolling behavior
+        window.addEventListener('scroll', function () {
+            let currentScroll = window.pageYOffset || document.documentElement.scrollTop
+        
+            if (currentScroll > lastScrollTop) {
+            // Scroll down
+            navbar.style.transform = 'translateY(-100%)' // Hide navbar when scrolling down
+            } else {
+            // Scroll up
+            navbar.style.transform = 'translateY(0)' // Show navbar when scrolling up
+            }
+        
+            lastScrollTop = currentScroll <= 0 ? 0 : currentScroll // Prevent negative values
+        })
+        
+        document.addEventListener("DOMContentLoaded", function () {
+            // Get the current page URL
+            const currentPage = window.location.pathname;
+        
+            // Select all navigation links
+            const navLinks = document.querySelectorAll(".nav-link ul li a");
+        
+            navLinks.forEach(link => {
+                if (link.getAttribute("href") === currentPage) {
+                    link.classList.add("active"); // Add 'active' class to the matching link
+                }
+            });
+        });
+        
+
+        // ***********************************************
+        // Disable Right Click
+document.addEventListener('contextmenu', function (event) {
+    event.preventDefault();
+});
+
+// Disable Keyboard Shortcuts for Inspect Element
+document.addEventListener('keydown', function (event) {
+    // Block common developer tool shortcuts
+    if (
+        (event.ctrlKey && (event.key.toLowerCase() === 'u' || event.key.toLowerCase() === 's' || event.key.toLowerCase() === 'p')) ||  // Ctrl + U / S / P
+        (event.ctrlKey && event.shiftKey && (event.key.toLowerCase() === 'i' || event.key.toLowerCase() === 'j' || event.key.toLowerCase() === 'c')) ||  // Ctrl + Shift + I / J / C
+        event.key === 'F12' // F12 key
+    ) {
+        event.preventDefault();
+        return false;
+    }
+});
+</script>
+  </body>
+</html>
